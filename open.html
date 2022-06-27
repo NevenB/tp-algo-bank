@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open account</title>
 </head>
+
 <body>
-    <script src="withdraw.js"></script>
+    <div id="error"></div>
+    <form>
+        <p>Voulez-vous un découvert</p>
+        <label for="yes">Oui</label><br>
+        <input type="radio" id="yes" name="wantOverdraft"><br>
+        <label for="no">Non</label><br>
+        <input type="radio" id="no" name="wantOverdraft"><br>
+        <label for="overdraft">Saisir le montant du découvert souhaité entre 100 et 2000 €</label><br>
+        <input type="number" name="overdraft" id="overdraft"><br>
+        <label for="sold">Saisir le montant du dépot, au minimum 500€</label><br>
+        <input type="number" name="sold" id="sold"><br>
+        <button>Ouvrir mon compte</button>
+    </form>
+    <button>Ouvrir un compte</button>
+    <button>Agios</button>
+    <button>Retraits</button>
 </body>
+<script src=".js"></script>
+
 </html>
