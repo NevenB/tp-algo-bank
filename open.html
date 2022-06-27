@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Open account</title>
 </head>
 
@@ -15,19 +16,19 @@
         <label for="yes">Oui</label>
         <input type="radio" id="yes" name="wantOverdraft">
         <label for="no">Non</label>
-        <input type="radio" id="no" name="wantOverdraft">
+        <input type="radio" id="no" name="wantOverdraft" checked>
         <div id="boxOverdraft">
             <label for="overdraft">Saisir le montant du découvert souhaité entre 100 et 2000 €</label>
             <input type="number" name="overdraft" id="overdraft">
         </div>
         <label for="sold">Saisir le montant du dépot, au minimum 500€</label>
         <input type="number" name="sold" id="sold">
-        <button>Ouvrir mon compte</button>
+        <input type="button" id="open_account" value="Valider" >
     </form>
     <button id="open">Ouvrir un compte</button>
     <button id="agios">Agios</button>
     <button id="withdraw">Retraits</button>
 </body>
-<script src=".js"></script>
+<script src="new_account.js"></script>
 
 </html>
