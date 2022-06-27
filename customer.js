@@ -18,35 +18,6 @@ const customer = {
         alert(`Solde (€): ${this.sold}€ \nDécouvert autorisé (€): ${this.overdraft}€`);
     },
 
-    withdraw() {
-        do {
-            if (confirm("Voulez-vous effectuer un retrait ?")) {
-                const w = parseInt(prompt('Saisissez le montant du retrait'));
-                if (w > this.sold + this.overdraft) {
-                    alert("Solde insuffisant");
-                } else {
-                    alert("Retrait autorisé");
-                    this.sold -= w;
-                    alert("Le montant de votre solde est donc de " + this.sold + "€");
-                }
-            }else{
-                break;
-            }
-
-        } while (this.sold + this.overdraft > 0);
-    },
-
-    computeAgios() {
-        let days;
-        do {
-            days = prompt('Saisissez le nombre de jours de découvert');
-        } while (days < 1 || days > 365);
-
-        const agios = ((Number(this.overdraft) * Number(days) * 0.1) / 365).toFixed(2); // decouvert * jours * 0.1 / 365
-        alert(`Montant des agios ${agios}`);
-    }
 }
 
 customer.openAccount();
-customer.withdraw();
-customer.computeAgios();
