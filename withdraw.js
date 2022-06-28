@@ -1,39 +1,44 @@
 class Compte {
-    constructor (sold, maxWithdraw) {
+    constructor(sold, overdraft, withdraw) {
         this.sold = sold;
-        this.overdraft;
-        this.maxWithdraw = maxWithdraw;
+        this.overdraft = overdraft;
+        this.withdraw = withdraw;
     }
-
-    setOverdraft() {
-        do {
-            this.overdraft = parseInt(prompt('Saisissez le montant de votre découvert (0 si vous n\'avez pas droit au découvert)'));
-            if (overdraft == 0) {
-                alert("Vous n'avez pas droit au découvert");
-                break;
-            }
-        } while (overdraft < 100 | overdraft > 2000);
-
-        if (overdraft != 0) {
-            alert('Vous avez droit au découvert');
-        }
-    }
-
-    doWithdraw() {
-        alert('Bienvenue chez GTM Bank');
-
-        const withdraw = parseInt(prompt('Saississez le montant du retrait')); 
-        
-        if (withdraw > this.sold + this.overdraft) {
-            alert("Solde insuffisant");
-        } else {
-            alert("Retrait autorisé");
-            this.sold = this.sold - withdraw;
-            alert("Le montant de votre solde est donc de " + this.sold + "€");
-        }
+    doWithdraw(number) {
+        this.sold = this.sold - number;
+        return this.sold;
     }
 }
+const compte1 = new Compte(3000, 1500, 1000);
+const buttonElement = document.getElementById("sub");
+buttonElement.addEventListener("click", withdraw);
+function withdraw(e) {
+    e.preventDefault();
+    const inputElement = document.getElementById("number");
+    let number = parseFloat(inputElement.value);
+    sessionStorage.setItem("number", number);
+    if (number > compte1.sold + compte1.overdraft) {
+        alert("Solde insuffisant");
+    } else {
+        alert("Retrait autorisé");
+        const soldElement = document.getElementById("sold");
+        soldElement.textContent = compte1.doWithdraw(number);
+    }
+}
+const btnOpen = document.getElementById("open");
+const btnAggio = document.getElementById("aggio");
+const btnWithdraw = document.getElementById("withdraw");
 
-const compte1 = new Compte(1000, 500);
-compte1.setOverdraft();
-compte1.doWithdraw();
+
+btnOpen.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.href = 'open.html';
+})
+btnAggio.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.href = 'agios.html';
+})
+btnWithdraw.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.href = 'withdraw.html';
+})
