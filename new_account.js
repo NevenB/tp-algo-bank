@@ -31,3 +31,13 @@ btn.addEventListener('click', function () {
         location.href = 'withdraw.html';
     }
 });
+
+document.getElementById('open').addEventListener('click', function(){
+    location.href = 'open.html';
+});
+document.getElementById('agios').addEventListener('click',function(){
+    location.href = 'agios.html';
+});
+document.getElementById('withdraw').addEventListener('click',function(){
+    location.href = 'withdraw.html';
+});
