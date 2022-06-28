@@ -1,30 +1,47 @@
 class Compte {
-    constructor(sold, overdraft, withdraw) {
+    constructor(sold, overdraft) {
         this.sold = sold;
         this.overdraft = overdraft;
-        this.withdraw = withdraw;
     }
     doWithdraw(number) {
         this.sold = this.sold - number;
         return this.sold;
     }
 }
-const compte1 = new Compte(3000, 1500, 1000);
+const compte1 = new Compte(sessionStorage.getItem("sold"), sessionStorage.getItem("overdraft"));
 const buttonElement = document.getElementById("sub");
 buttonElement.addEventListener("click", withdraw);
+
+document.getElementById("sold").innerHTML = compte1.sold;
+document.getElementById("overdraft").innerHTML = compte1.overdraft;
+
 function withdraw(e) {
     e.preventDefault();
+
     const inputElement = document.getElementById("number");
     let number = parseFloat(inputElement.value);
+
     sessionStorage.setItem("number", number);
+    const errorSold = document.getElementById("errorSold");
+ 
+
     if (number > compte1.sold + compte1.overdraft) {
-        alert("Solde insuffisant");
+        errorSold.innerHTML = "Retrait refusé, pour solde insuffisant";
     } else {
-        alert("Retrait autorisé");
+        errorSold.innerHTML = "Retrait autorisé";
         const soldElement = document.getElementById("sold");
-        soldElement.textContent = compte1.doWithdraw(number);
+        // Je crée une variable pour mettre à jour le sold
+        const newSold =  compte1.doWithdraw(number);
+        // Affiche la nouvelle valeur du solde
+        soldElement.textContent = newSold
+        // Permet de stocker la valeur dans le session storage
+        sessionStorage.setItem("sold", newSold);
     }
+    inputElement.value="";
 }
+
+
+
 const btnOpen = document.getElementById("open");
 const btnAggio = document.getElementById("aggio");
 const btnWithdraw = document.getElementById("withdraw");
