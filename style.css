@@ -1,3 +1,23 @@
 #boxOverdraft{
     visibility: hidden;
 }
+
+body {
+    background-color: #e2d4ba;
+    text-align: center;
+}
+
+h1 {
+    color: #653239;
+    text-align: center;
+}
+button {
+    background-color: #af7a6d;
+    font-weight: 700;
+    font-size: small;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+         
+
+
