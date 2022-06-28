@@ -10,26 +10,34 @@ radioNo.addEventListener('click', function () {
     boxOverdraft.style.visibility = 'hidden';
 });
 
-const boxError = document.getElementById('error');
+const boxErrorOverdraft = document.getElementById('errorOverdraft');
+const boxErrorerrorDeposit = document.getElementById('errorDeposit');
 
 const btn = document.getElementById('open_account');
 btn.addEventListener('click', function () {
     const inputOverdraft = document.getElementById('overdraft');
     const inputSold = document.getElementById('sold');
 
+    boxErrorerrorDeposit.innerHTML = '';
+    boxErrorOverdraft.innerHTML = '';
+
+
     if(radioYes.value){
         if (inputOverdraft.value < 100 || inputOverdraft.value > 2000){
-            boxError.innerHTML = 'Overdraft must be between 100 and 2000 deposit must be greater or equals to 500';
+            boxErrorOverdraft.innerHTML = 'Overdraft must be between 100 and 2000';
         }else{
             sessionStorage.setItem('overdraft', inputOverdraft.value);
         }
     }
     if (inputSold.value < 500) {
-        boxError.innerHTML = 'Overdraft must be between 100 and 2000 deposit must be greater or equals to 500';
+        boxErrorerrorDeposit.innerHTML = 'Deposit must be greater or equals to 500';
     }else{
         sessionStorage.setItem('sold', inputSold.value); 
         location.href = 'withdraw.html';
     }
+
+    inputOverdraft.value = '';
+    inputSold.value = '';
 });
 
 document.getElementById('open').addEventListener('click', function(){
