@@ -35,7 +35,7 @@ btn.addEventListener('click', function () {
 document.getElementById('open').addEventListener('click', function(){
     location.href = 'open.html';
 });
-document.getElementById('agios').addEventListener('click',function(){
+document.getElementById('aggio').addEventListener('click',function(){
     location.href = 'agios.html';
 });
 document.getElementById('withdraw').addEventListener('click',function(){
