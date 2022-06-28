@@ -24,9 +24,12 @@ function withdraw(e) {
     sessionStorage.setItem("number", number);
     const errorSold = document.getElementById("errorSold");
  
-
-    if (number > compte1.sold + compte1.overdraft) {
+    const isPossible = Number(compte1.sold) + Number(compte1.overdraft);
+    console.log("Is possible : ", isPossible);
+    if (number > isPossible) {
         errorSold.innerHTML = "Retrait refusé, pour solde insuffisant";
+        console.log(`${number} > ${compte1.sold} + ${compte1.overdraft}`);
+        console.log(number > compte1.sold + compte1.overdraft);
     } else {
         errorSold.innerHTML = "Retrait autorisé";
         const soldElement = document.getElementById("sold");
