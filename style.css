@@ -5,6 +5,8 @@
 body {
     background-color: #e2d4ba;
     text-align: center;
+    background-image: url("PhotoBank2.jpg");
+    background-size: cover;
 }
 
 h1 {
@@ -16,7 +18,7 @@ button {
     color: #e2d4ba;
     font-weight: 700;
     font-size: small;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     border-radius: 5px;
     height: 30px;
