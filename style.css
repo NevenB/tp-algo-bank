@@ -10,12 +10,16 @@ body {
 }
 
 h1 {
-    color: #653239;
+    color: black;
     text-align: center;
+    font-weight: 800;
+    font-size: x-large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-button {
-    background-color: #af7a6d;
-    color: #e2d4ba;
+button, input[type=button]{
+    background-color:  whitesmoke;
+    color: black;
+    margin-top: 20px;
     font-weight: 700;
     font-size: small;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -25,6 +29,26 @@ button {
     margin-left: 5px;
     margin-right: 5px;
 }
-         
 
 
+p, label, #errorDeposit, #errorOverdraft{
+    font-weight: 500;
+    font-size:medium;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#errorDeposit, #errorOverdraft{
+    font-weight: 500;
+    font-size: small;
+    color: crimson;
+}
+
+li {
+    text-align: center;
+    font-weight: 500;
+    list-style: none;
+    font-size:medium;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+ul{
+    padding-inline-start: 0;
+}
